@@ -1,0 +1,65 @@
+# /.phpunit.cache
+# /node_modules
+# /public/build
+# /public/hot
+# /public/storage
+# /storage/*.key
+# /vendor
+# .env
+# .env.backup
+# .env.production
+# .phpunit.result.cache
+# Homestead.json
+# Homestead.yaml
+# auth.json
+# npm-debug.log
+# yarn-error.log
+# /.fleet
+# /.idea
+# /.vscode
+# Bỏ qua các tệp cache
+.phpunit.cache
+.phpunit.result.cache
+
+# Bỏ qua thư mục cài đặt Node.js
+/node_modules
+
+# Bỏ qua thư mục chứa các tệp được tạo ra từ quá trình xây dựng
+/public/build
+
+# Bỏ qua thư mục chứa các tệp hot-reload
+/public/hot
+
+# Bỏ qua thư mục chứa dữ liệu tĩnh của ứng dụng
+/public/storage
+
+# Bỏ qua tất cả các file key trong thư mục storage (ví dụ: storage/*.key)
+/storage/*.key
+
+# Bỏ qua thư mục chứa các gói phụ thuộc của Composer
+/vendor
+
+# Bỏ qua file cấu hình môi trường
+.env
+
+# Bỏ qua file backup của file cấu hình môi trường
+.env.backup
+
+# Bỏ qua file cấu hình môi trường sản phẩm
+.env.production
+
+# Bỏ qua các tệp cấu hình Homestead
+Homestead.json
+Homestead.yaml
+
+# Bỏ qua file cấu hình xác thực Composer
+auth.json
+
+# Bỏ qua các file nhật ký của npm và yarn
+npm-debug.log
+yarn-error.log
+
+# Bỏ qua các thư mục cấu hình của các trình biên dịch mã
+/.fleet
+/.idea
+/.vscode
