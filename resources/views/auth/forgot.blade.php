@@ -55,15 +55,17 @@
                     <p class="text-center small">Enter your email to forgot password</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate>
-                 
+                  <form class="row g-3 needs-validation" action="{{ route('password.email') }}" method="POST" novalidate>
+                    @csrf
 
                     <div class="col-12">
-                      <label for="yourPassword" class="form-label">Email</label>
-                      <input type="email" name="email" class="form-control" id="yourEmail" required>
-                      <div class="invalid-feedback">Please enter your email!</div>
+                      <label for="email">Email Address:</label>
+                      <input type="email" name="email" id="email" value="{{ old('email') }}" required autofocus>
+                      @error('email')
+                      <span>{{ $message }}</span>
+                      @enderror
                     </div>
-        
+
                     <div class="col-12">
                       <button class="btn btn-primary w-100" type="submit">Forgot</button>
                     </div>
@@ -76,7 +78,7 @@
                 </div>
               </div>
 
-           
+
 
             </div>
           </div>
