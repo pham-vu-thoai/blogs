@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\PermissionController;
+use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
@@ -8,6 +10,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Admin\RoleController;
+
 
 
 /*
@@ -47,5 +51,32 @@ Route::prefix('admin')->group(function () {
     Route::get('profile', [DashboardController::class, 'showAdminProfile'])->name('profile');
     // Route::post('changePassword', [AuthController::class, 'changePassword'])->name('changePassword');
     Route::post('changePassword', [AuthController::class, 'changePassword_Admin'])->name('changePassword');
-});
+    // Role routes
+    Route::resource('role', RoleController::class);
 
+    // Permission routes
+    Route::resource('permission', PermissionController::class);
+    // Role//
+    Route::get('/roles', [RoleController::class, 'index'])->name('role.index');
+    Route::get('/roles/create', [RoleController::class, 'create'])->name('role.create');
+    Route::post('/roles', [RoleController::class, 'store'])->name('role.store');
+    Route::get('/roles/{role}/edit', [RoleController::class, 'edit'])->name('role.edit');
+    Route::PATCH('/roles/{role}', [RoleController::class, 'update'])->name('role.update');
+    Route::delete('roles/{role}', [RoleController::class, 'destroy'])->name('role.destroy');
+    // Permission
+    Route::get('/permission', [PermissionController::class, 'index'])->name('permission.index');
+    Route::get('/permission/create', [PermissionController::class, 'create'])->name('permission.create');
+    Route::post('/permission', [PermissionController::class, 'store'])->name('permission.store');
+    Route::get('/permission/{permission}/edit', [PermissionController::class, 'edit'])->name('permission.edit');
+    Route::PATCH('/permission/{permission}', [PermissionController::class, 'update'])->name('permission.update');
+    Route::delete('permission/{permission}', [PermissionController::class, 'destroy'])->name('permission.destroy');
+    // Post//
+    Route::get('/post', [PostController::class, 'index',])->name('post');
+    Route::post('post/upload', [PostController::class, 'uploadImage'])->name('post.upload');
+    Route::get('/post/create', [PostController::class, 'create'])->name('post.create');
+    Route::post('/post', [PostController::class, 'store'])->name('post.store');
+    Route::get('/post/{id}/edit', [PostController::class, 'edit'])->name('post.edit');
+    Route::put('/post/{id}', [PostController::class, 'update'])->name('post.update');
+    Route::delete('/post/{id}', [PostController::class, 'destroy'])->name('post.destroy');
+    Route::get('/post/show/{slug}', [PostController::class, 'show',])->name('post.show');
+})->middleware("auth");

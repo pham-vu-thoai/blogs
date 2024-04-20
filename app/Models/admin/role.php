@@ -8,6 +8,6 @@ class role extends Model
 {
     public function permissions()
     {
-    	return $this->belongsToMany('App\Model\admin\Permission');
+    	return $this->belongsToMany('App\Models\admin\Permission');
     }
 }

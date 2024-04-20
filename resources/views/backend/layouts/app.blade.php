@@ -34,6 +34,7 @@
     @include('backend.layouts.slidebar')
     <main id="main" class="main">
       @yield('content')
+      
 
     </main>
     

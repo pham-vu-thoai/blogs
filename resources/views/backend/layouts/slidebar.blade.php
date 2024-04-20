@@ -16,7 +16,7 @@
     </a>
     <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
       <li>
-        <a href="components-alerts.html">
+        <a href="{{route('post')}}">
           <i class="bi bi-circle"></i><span>Post</span>
         </a>
       </li>
@@ -40,14 +40,14 @@
     </a>
   </li><!-- End User Page Nav -->
   <li class="nav-item">
-    <a class="nav-link collapsed" href="pages-faq.html">
+    <a class="nav-link collapsed" href="{{route('role.index')}}">
       <i class="bi bi-question-circle"></i>
       <span>Role</span>
     </a>
   </li><!-- End Role Page Nav -->
 
   <li class="nav-item">
-    <a class="nav-link collapsed" href="pages-contact.html">
+    <a class="nav-link collapsed" href="{{route('permission.index')}}">
       <i class="bi bi-envelope"></i>
       <span>Permisson</span>
     </a>
