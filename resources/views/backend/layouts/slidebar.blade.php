@@ -21,12 +21,12 @@
         </a>
       </li>
       <li>
-        <a href="components-accordion.html">
+        <a href="{{route('tag.index')}}">
           <i class="bi bi-circle"></i><span>Tags</span>
         </a>
       </li>
       <li>
-        <a href="components-badges.html">
+        <a href="{{route('category.index')}}">
           <i class="bi bi-circle"></i><span>Categories</span>
         </a>
       </li>
@@ -34,7 +34,7 @@
     </ul>
   </li><!-- End Components Nav -->
    <li class="nav-item">
-    <a class="nav-link collapsed" href="users-profile.html">
+    <a class="nav-link collapsed" href="{{route('user.index')}}">
       <i class="bi bi-person"></i>
       <span>User</span>
     </a>

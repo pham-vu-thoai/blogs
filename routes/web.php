@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
@@ -11,8 +12,11 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Admin\RoleController;
-
-
+use App\Http\Controllers\Admin\TagController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\User\PostController as UserPostController;
+use App\Http\Controllers\User\HomeController as UserHomeController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,4 +83,41 @@ Route::prefix('admin')->group(function () {
     Route::put('/post/{id}', [PostController::class, 'update'])->name('post.update');
     Route::delete('/post/{id}', [PostController::class, 'destroy'])->name('post.destroy');
     Route::get('/post/show/{slug}', [PostController::class, 'show',])->name('post.show');
+    //Category//
+    Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
+    Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');
+    Route::post('/category', [CategoryController::class, 'store'])->name('category.store');
+    Route::get('/category/{category}/edit', [CategoryController::class, 'edit'])->name('category.edit');
+    Route::PATCH('/category/{category}', [CategoryController::class, 'update'])->name('category.update');
+    Route::delete('category/{category}', [CategoryController::class, 'destroy'])->name('category.destroy');
+    // Tags//
+    Route::get('/tag', [TagController::class, 'index'])->name('tag.index');
+    Route::get('/tag/create', [TagController::class, 'create'])->name('tag.create');
+    Route::post('/tag', [TagController::class, 'store'])->name('tag.store');
+    Route::get('/tag/{tag}/edit', [TagController::class, 'edit'])->name('tag.edit');
+    Route::PATCH('/tag/{tag}', [TagController::class, 'update'])->name('tag.update');
+    Route::delete('tag/{tag}', [TagController::class, 'destroy'])->name('tag.destroy');
+    //User//
+    Route::get('/user', [UserController::class, 'index'])->name('user.index');
+    Route::get('/user/create', [UserController::class, 'create'])->name('user.create');
+    Route::post('/user', [UserController::class, 'store'])->name('user.store');
+    Route::get('/user/{user}/edit', [UserController::class, 'edit'])->name('user.edit');
+    Route::PATCH('/user/{user}', [UserController::class, 'update'])->name('user.update');
+    Route::delete('user/{user}', [UserController::class, 'destroy'])->name('user.destroy');
+
 })->middleware("auth");
+Route::group(['namespace' => 'User'],function(){
+	Route::get('/',[UserHomeController::class,'index']);
+	Route::get('post/{post}',[UserPostController::class,'post'])->name('user.post');
+
+	Route::get('post/tag/{tag}',[UserHomeController::class,'tag'])->name('tag');
+	Route::get('post/category/{category}',[UserHomeController::class,'category'])->name('category');
+
+	//vue routes
+	Route::post('getPosts',[UserPostController::class,'getAllPost']);
+	Route::post('saveLike',[UserPostController::class,'saveLike']);
+});
+
+// Auth::routes();
+
+Route::get('/home',[HomeController::class,'index'])->name('home');

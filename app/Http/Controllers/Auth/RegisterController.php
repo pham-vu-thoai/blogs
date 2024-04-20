@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Models\user\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\admin\admin;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -54,5 +55,5 @@ class RegisterController extends Controller
          // Chuyển hướng người dùng đến trang đăng nhập và thông báo thành công
          return redirect()->route('login')->with('success', 'Registration successful. Please login.');
      }
-     
+    
 }
