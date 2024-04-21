@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
 <<<<<<< HEAD
+<<<<<<< HEAD
     'App\\Http\\Controllers\\AuthController' => $baseDir . '/app/Http/Controllers/AuthController.php',
     'App\\Http\\Controllers\\CategoryController' => $baseDir . '/app/Http/Controllers/CategoryController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
@@ -29,6 +30,23 @@ return array(
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\DashboardController' => $baseDir . '/app/Http/Controllers/DashboardController.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
+=======
+    'App\\Http\\Controllers\\Admin\\CategoryController' => $baseDir . '/app/Http/Controllers/Admin/CategoryController.php',
+    'App\\Http\\Controllers\\Admin\\PermissionController' => $baseDir . '/app/Http/Controllers/Admin/PermissionController.php',
+    'App\\Http\\Controllers\\Admin\\PostController' => $baseDir . '/app/Http/Controllers/Admin/PostController.php',
+    'App\\Http\\Controllers\\Admin\\RoleController' => $baseDir . '/app/Http/Controllers/Admin/RoleController.php',
+    'App\\Http\\Controllers\\Admin\\TagController' => $baseDir . '/app/Http/Controllers/Admin/TagController.php',
+    'App\\Http\\Controllers\\Admin\\UserController' => $baseDir . '/app/Http/Controllers/Admin/UserController.php',
+    'App\\Http\\Controllers\\AuthController' => $baseDir . '/app/Http/Controllers/AuthController.php',
+    'App\\Http\\Controllers\\Auth\\ChangePasswordController' => $baseDir . '/app/Http/Controllers/Auth/ChangePasswordController.php',
+    'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
+    'App\\Http\\Controllers\\Auth\\LoginController' => $baseDir . '/app/Http/Controllers/Auth/LoginController.php',
+    'App\\Http\\Controllers\\Auth\\RegisterController' => $baseDir . '/app/Http/Controllers/Auth/RegisterController.php',
+    'App\\Http\\Controllers\\Auth\\ResetPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ResetPasswordController.php',
+    'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
+    'App\\Http\\Controllers\\DashboardController' => $baseDir . '/app/Http/Controllers/DashboardController.php',
+    'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
+>>>>>>> 3e82ed9e446a2b5c8c7e4377ef07e5c34e2a4737
     'App\\Http\\Controllers\\User\\HomeController' => $baseDir . '/app/Http/Controllers/User/HomeController.php',
     'App\\Http\\Controllers\\User\\PostController' => $baseDir . '/app/Http/Controllers/User/PostController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
@@ -54,6 +72,9 @@ return array(
     'App\\Models\\user\\post' => $baseDir . '/app/Models/user/post.php',
     'App\\Models\\user\\post_tag' => $baseDir . '/app/Models/user/post_tag.php',
     'App\\Models\\user\\tag' => $baseDir . '/app/Models/user/tag.php',
+<<<<<<< HEAD
+>>>>>>> 3e82ed9e446a2b5c8c7e4377ef07e5c34e2a4737
+=======
 >>>>>>> 3e82ed9e446a2b5c8c7e4377ef07e5c34e2a4737
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',

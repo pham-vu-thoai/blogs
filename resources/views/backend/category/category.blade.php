@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 @extends('backend.category.layout');
 
 @section('content')
@@ -19,6 +20,8 @@
 </div>
 
 =======
+=======
+>>>>>>> 3e82ed9e446a2b5c8c7e4377ef07e5c34e2a4737
 @extends('backend.layouts.app')
 @section('content')
 @section('style')
@@ -88,5 +91,8 @@
 <!-- /.content-wrapper -->
 @endsection
 @section('script')
+<<<<<<< HEAD
+>>>>>>> 3e82ed9e446a2b5c8c7e4377ef07e5c34e2a4737
+=======
 >>>>>>> 3e82ed9e446a2b5c8c7e4377ef07e5c34e2a4737
 @endsection

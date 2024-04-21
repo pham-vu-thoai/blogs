@@ -531,6 +531,7 @@ class ComposerStaticInita9bbd3976012d5a30a5f6721e86c380d
 
     public static $classMap = array (
 <<<<<<< HEAD
+<<<<<<< HEAD
         'App\\Http\\Controllers\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/AuthController.php',
         'App\\Http\\Controllers\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/CategoryController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
@@ -553,6 +554,23 @@ class ComposerStaticInita9bbd3976012d5a30a5f6721e86c380d
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/DashboardController.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+=======
+        'App\\Http\\Controllers\\Admin\\CategoryController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/CategoryController.php',
+        'App\\Http\\Controllers\\Admin\\PermissionController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/PermissionController.php',
+        'App\\Http\\Controllers\\Admin\\PostController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/PostController.php',
+        'App\\Http\\Controllers\\Admin\\RoleController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/RoleController.php',
+        'App\\Http\\Controllers\\Admin\\TagController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/TagController.php',
+        'App\\Http\\Controllers\\Admin\\UserController' => __DIR__ . '/../..' . '/app/Http/Controllers/Admin/UserController.php',
+        'App\\Http\\Controllers\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/AuthController.php',
+        'App\\Http\\Controllers\\Auth\\ChangePasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ChangePasswordController.php',
+        'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
+        'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
+        'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
+        'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
+        'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\DashboardController' => __DIR__ . '/../..' . '/app/Http/Controllers/DashboardController.php',
+        'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
+>>>>>>> 3e82ed9e446a2b5c8c7e4377ef07e5c34e2a4737
         'App\\Http\\Controllers\\User\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/HomeController.php',
         'App\\Http\\Controllers\\User\\PostController' => __DIR__ . '/../..' . '/app/Http/Controllers/User/PostController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
@@ -578,6 +596,9 @@ class ComposerStaticInita9bbd3976012d5a30a5f6721e86c380d
         'App\\Models\\user\\post' => __DIR__ . '/../..' . '/app/Models/user/post.php',
         'App\\Models\\user\\post_tag' => __DIR__ . '/../..' . '/app/Models/user/post_tag.php',
         'App\\Models\\user\\tag' => __DIR__ . '/../..' . '/app/Models/user/tag.php',
+<<<<<<< HEAD
+>>>>>>> 3e82ed9e446a2b5c8c7e4377ef07e5c34e2a4737
+=======
 >>>>>>> 3e82ed9e446a2b5c8c7e4377ef07e5c34e2a4737
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',

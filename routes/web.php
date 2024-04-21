@@ -12,15 +12,21 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 <<<<<<< HEAD
+<<<<<<< HEAD
 use App\Http\Controllers\CategoryController;
 
 =======
+=======
+>>>>>>> 3e82ed9e446a2b5c8c7e4377ef07e5c34e2a4737
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\User\PostController as UserPostController;
 use App\Http\Controllers\User\HomeController as UserHomeController;
 use Illuminate\Support\Facades\Auth;
+<<<<<<< HEAD
+>>>>>>> 3e82ed9e446a2b5c8c7e4377ef07e5c34e2a4737
+=======
 >>>>>>> 3e82ed9e446a2b5c8c7e4377ef07e5c34e2a4737
 
 /*
@@ -40,6 +46,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', [HomeController::class, 'index']);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // admin
 Route::get('/login',[AuthController::class,'login']);
 Route::get('/register',[AuthController::class,'register']);
@@ -48,6 +55,8 @@ Route::get('/dashboard',[DashboardController::class,'dashboard']);
 Route::resource('/category', CategoryController::class);
 Route::post('/category', CategoryController::class);
 =======
+=======
+>>>>>>> 3e82ed9e446a2b5c8c7e4377ef07e5c34e2a4737
 // Route cho trang đăng nhập
 Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
 
@@ -134,5 +143,9 @@ Route::group(['namespace' => 'User'],function(){
 
 // Auth::routes();
 
+<<<<<<< HEAD
+Route::get('/home',[HomeController::class,'index'])->name('home');
+>>>>>>> 3e82ed9e446a2b5c8c7e4377ef07e5c34e2a4737
+=======
 Route::get('/home',[HomeController::class,'index'])->name('home');
 >>>>>>> 3e82ed9e446a2b5c8c7e4377ef07e5c34e2a4737
