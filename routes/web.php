@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\CategoryController;
 
 
 /*
@@ -28,3 +29,5 @@ Route::get('/login',[AuthController::class,'login']);
 Route::get('/register',[AuthController::class,'register']);
 Route::get('/forgotpassword',[AuthController::class,'forgotpassword']);
 Route::get('/dashboard',[DashboardController::class,'dashboard']);
+Route::resource('/category', CategoryController::class);
+Route::post('/category', CategoryController::class);
