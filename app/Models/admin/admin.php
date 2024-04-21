@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Model\admin;
+namespace App\Models\admin;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -11,7 +11,7 @@ class admin extends Authenticatable
 
     public function roles()
     {
-        return $this->belongsToMany('App\Model\admin\role');
+        return $this->belongsToMany('App\Models\admin\role');
     }
 
     public function getNameAttribute($value)
