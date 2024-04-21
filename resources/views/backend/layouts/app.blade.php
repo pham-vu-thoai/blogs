@@ -51,7 +51,9 @@
 
   <!-- Template Main JS File -->
   <script src="{{url('/public/backend/assets/js/main.js')}}"></script>
-  @yield('script')
+  <script src="https://cdn.ckeditor.com/ckeditor5/41.3.0/classic/ckeditor.js"></script>
+  @yield('scripts')
+  @yield('css')
 </body>
 
 </html>
