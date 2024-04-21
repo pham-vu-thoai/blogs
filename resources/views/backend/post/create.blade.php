@@ -49,7 +49,23 @@
                                 <option value="draft">Draft</option>
                             </select>
                         </div>
-
+                        <div class="form-group" style="margin-top:18px;">
+                            <label>Select Tags</label>
+                            <select class="form-control select2 select2-hidden-accessible" multiple="" data-placeholder="Select a State" style="width: 100%;" tabindex="-1" aria-hidden="true" name="tags[]">
+                                @foreach ($tags as $tag)
+                                <option value="{{ $tag->id }}">{{ $tag->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group" style="margin-top:18px;">
+                            <label>Select Category</label>
+                            <select class="form-control select2 select2-hidden-accessible" multiple="" data-placeholder="Select a State" style="width: 100%;" tabindex="-1" aria-hidden="true" name="categories[]">
+                                @foreach ($categories as $category)
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        
                         <!-- <div class="form-group">
                             <label for="image">Image:</label>
                             <input type="file" name="image" id="image" class="form-control">
@@ -65,7 +81,7 @@
                             <input type="number" name="dislike" id="dislike" class="form-control">
                         </div> -->
                         <!-- <textarea class="form-control" rows="5" name="content" id="task-textarea">{{old('description')}}</textarea> -->
-                        
+
                         <button type="submit" class="btn btn-primary">Create Post</button>
                     </form>
                 </div>
@@ -80,28 +96,24 @@
 @endsection
 
 @section('scripts')
-    <script>
-        
+<script>
+    ClassicEditor
+        .create(document.querySelector('#task-textarea'), {
+            ckfinder: {
+                uploadUrl: "{!! route('post.upload') !!}?_token={{ csrf_token() }}"
+            }
+        })
+        .then(editor => {
+            console.log(editor);
+        })
+        .catch(error => {
+                console.error(error);
+            }
 
-
-        ClassicEditor
-            .create( document.querySelector( '#task-textarea' ), {
-                ckfinder:{
-                    uploadUrl: "{!! route('post.upload') !!}?_token={{ csrf_token() }}"
-                }
-    } )
-    .then(editor =>{
-                console.log(editor);
-            })
-            .catch( error => {
-                console.error( error );
-            } 
-            
         );
-        // CKEDITOR.replace('task-textarea',{
-        //     filebrowserUploadUrl:"{!! route('post.upload') !!}?_token={{ csrf_token() }}",
-        //     filebrowserUploadMethod:'form'
-        // });
-        
-    </script>
+    // CKEDITOR.replace('task-textarea',{
+    //     filebrowserUploadUrl:"{!! route('post.upload') !!}?_token={{ csrf_token() }}",
+    //     filebrowserUploadMethod:'form'
+    // });
+</script>
 @endsection

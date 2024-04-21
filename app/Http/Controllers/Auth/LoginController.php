@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
 
+use App\Models\user\category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -47,6 +48,7 @@ class LoginController extends Controller
         }
 
         if (Auth::attempt($credentials)) {
+           
             return redirect()->intended('/');
         }
         return redirect()->back()->withErrors(['email' => 'Invalid credentials'])->withInput($request->only('email'));

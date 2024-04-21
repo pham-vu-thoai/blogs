@@ -1,29 +1,49 @@
 <?php
-
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
-use App\Models\user\category;
-use App\Models\user\post;
-use App\Models\user\tag;
+use App\Models\User\Category;
+use App\Models\User\Post;
+use App\Models\User\Tag;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
-    	$posts = post::where('status',1)->orderBy('created_at','DESC')->paginate(5);
-    	return view('user.blog',compact('posts'));
-    }
-    public function tag(tag $tag)
-    {
-        $posts = $tag->posts();
-        return view('user.blog',compact('posts'));
+        $categories = Category::all();
+        $posts = Post::where('status', 0)
+                     ->orderBy('created_at', 'DESC')
+                     ->paginate(5);
+        return view('frontend.blogs', compact('posts', 'categories'));
     }
 
-    public function category(category $category)
+    public function tag(Tag $tag)
     {
-        $posts = $category->posts();
-        return view('user.blog',compact('posts'));
+        $categories = Category::all();
+        $posts = $tag->posts()->where('status', 0);
+        return view('frontend.blogs', compact('posts','categories'));
+    }
+
+    public function category(Category $category)
+    {
+        $categories = Category::all();
+        $posts = $category->posts()->where('status', 0);
+        return view('frontend.blogs', compact('posts','categories'));
+    }
+
+    public function search(Request $request)
+    {
+        $categories = Category::all();
+        $query = $request->input('query');
+
+        // Tìm kiếm bài viết có tiêu đề hoặc nội dung chứa từ khóa tìm kiếm
+        $posts = Post::where('title', 'like', '%' . $query . '%')
+                     ->orWhere('body', 'like', '%' . $query . '%')
+                     ->where('status', 0)                    
+                     ->orderBy('created_at', 'DESC')
+                     ->paginate(5);
+
+        return view('frontend.search_result', compact('posts', 'query', 'categories'));
     }
 }

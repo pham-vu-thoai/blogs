@@ -1,5 +1,13 @@
 @extends('backend.layouts.app')
-
+<style>
+        .content img{
+            display: block; /* Đảm bảo ảnh là một khối hiển thị */
+    margin-left: auto; /* Đẩy ảnh về bên trái */
+    margin-right: auto; /* Đẩy ảnh về bên phải */
+        max-width: 700px;
+        height: auto;
+        }
+    </style>
 @section('content')
     <div class="pagetitle">
         <h1>Posts</h1>

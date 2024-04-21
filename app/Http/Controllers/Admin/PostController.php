@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\user\category;
 use Illuminate\Http\Request;
 use App\Models\user\post;
+use App\Models\user\tag;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Psy\Readline\Hoa\Console;
 
@@ -34,7 +37,11 @@ class PostController extends Controller
 
     public function create()
     {
-        return view('backend.post.create');
+        
+            $tags =tag::all();
+             $categories =category::all();
+             return view('backend.post.create',compact('tags','categories'));
+      
     }
 
     public function store(Request $request)
@@ -60,24 +67,26 @@ class PostController extends Controller
 
         // $post->image = $validatedData['image'];
         // Assuming 'posted_by' is the authenticated user's ID
-        $post->posted_by = 145;
+        $post->posted_by = Auth::user()->id;
         $post->like = 0;
         $post->dislike = 0;
-
+       
         // Save the post to the database
         $post->save();
-
+        $post->tags()->sync($request->tags);
+        $post->categories()->sync($request->categories);
 
         // Redirect the user to the newly created post
         return redirect()->route('post')->with('success', 'Post created successfully!');
     }
     public function edit($id)
-    {
+    {  
         // Lấy thông tin của bài viết cần chỉnh sửa từ cơ sở dữ liệu
-        $post = post::findOrFail($id);
-
-        // Trả về view edit.blade.php và truyền dữ liệu bài viết cho view
-        return view('backend.post.edit', compact('post'));
+        
+        $post = post::with('tags','categories')->where('id',$id)->first();
+        $tags =tag::all();
+        $categories =category::all();
+        return view('backend.post.edit',compact('tags','categories','post'));
     }
     public function update(Request $request, $id)
     {
@@ -98,7 +107,8 @@ class PostController extends Controller
         $post->body = $validatedData['content'];
         $post->status = ($validatedData['status'] == 'private') ? 1 : 0;
         $post->slug = $slug;
-
+        $post->tags()->sync($request->tags);
+        $post->categories()->sync($request->categories);
         // Lưu thay đổi vào cơ sở dữ liệu
         $post->save();
 

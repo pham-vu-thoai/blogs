@@ -104,20 +104,21 @@ Route::prefix('admin')->group(function () {
     Route::get('/user/{user}/edit', [UserController::class, 'edit'])->name('user.edit');
     Route::PATCH('/user/{user}', [UserController::class, 'update'])->name('user.update');
     Route::delete('user/{user}', [UserController::class, 'destroy'])->name('user.destroy');
-
 })->middleware("auth");
-Route::group(['namespace' => 'User'],function(){
-	Route::get('/',[UserHomeController::class,'index']);
-	Route::get('post/{post}',[UserPostController::class,'post'])->name('user.post');
+Route::group(['namespace' => 'User'], function () {
+    Route::get('/', [UserHomeController::class, 'index']);
+    Route::get('/post/{slug}', [UserPostController::class, 'show'])->name('user.post');
+    Route::get('/post/tag/{tag}', [UserHomeController::class, 'tag'])->name('tag');
+    Route::get('/post/category/{category}', [UserHomeController::class, 'category'])->name('category');
 
-	Route::get('post/tag/{tag}',[UserHomeController::class,'tag'])->name('tag');
-	Route::get('post/category/{category}',[UserHomeController::class,'category'])->name('category');
+    Route::post('getPosts', [UserPostController::class, 'getAllPost']);
+    // web.php
+    Route::post('/posts/save-like', [UserPostController::class, 'saveLike'])->name('posts.save-like');
+    Route::post('/posts/save-dislike', [UserPostController::class, 'savedisLike'])->name('posts.save-dislike');
 
-	//vue routes
-	Route::post('getPosts',[UserPostController::class,'getAllPost']);
-	Route::post('saveLike',[UserPostController::class,'saveLike']);
+    Route::get('/search', [UserHomeController::class, 'search'])->name('search');
 });
 
 // Auth::routes();
 
-Route::get('/home',[HomeController::class,'index'])->name('home');
+Route::get('/home', [UserHomeController::class, 'index'])->name('index');

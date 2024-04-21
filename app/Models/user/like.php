@@ -8,6 +8,6 @@ class like extends Model
 {
     public function post()
     {
-    	return $this->belongsTo('App\Model\user\post','like'); 
+    	return $this->belongsTo('App\Models\user\post','like'); 
     }
 }

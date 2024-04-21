@@ -53,7 +53,7 @@
   @yield('css')
   <!-- Template Main JS File -->
   <script src="{{url('/public/backend/assets/js/main.js')}}"></script>
-  @yield('script')
+ 
 </body>
 
 </html>
