@@ -25,6 +25,16 @@
     .content {
         font-size: 16px;
         line-height: 1.6;
+        /* display: flex; */
+        
+    }
+    .content img{
+        display: block; /* Đảm bảo ảnh là một khối hiển thị */
+    margin-left: auto; /* Đẩy ảnh về bên trái */
+    margin-right: auto; /* Đẩy ảnh về bên phải */
+        max-width: 700px;
+        height: auto;
+        
     }
 </style>
 @endsection
@@ -33,6 +43,8 @@
     <div class="row">
 
         <!-- Left side columns -->
+        <div class="card">
+                <div class="card-body">
         <div class="col-lg-12">
             <div class="row">
                 <div class="post col-12">
@@ -48,5 +60,9 @@
             </div>
 
         </div>
+        </div>
+
+        </div>
+
     </div>
     @endsection

@@ -6,6 +6,15 @@
 
 @section('head')
     <link rel="stylesheet" href="{{ asset('public/user/css/prism.css') }}">
+    <style>
+        .content img{
+            display: block; /* Đảm bảo ảnh là một khối hiển thị */
+    margin-left: auto; /* Đẩy ảnh về bên trái */
+    margin-right: auto; /* Đẩy ảnh về bên phải */
+        max-width: 700px;
+        height: auto;
+        }
+    </style>
 @endsection
 
 @section('main-content')
@@ -13,8 +22,10 @@
     <article>
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 content">
                     @if ($post)
+                        <h2 class="post-title">{{ $post->title }}</h2>
+	                    <h3 class="post-subtitle">{{ $post->subtitle }}</h3>
                         <small>Created at {{ $post->created_at }}</small>
                         @if ($post->categories && $post->categories->count() > 0)
                             @foreach ($post->categories as $category)

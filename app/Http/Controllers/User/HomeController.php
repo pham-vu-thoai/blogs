@@ -12,7 +12,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-    	$posts = post::where('status',1)->orderBy('created_at','DESC')->paginate(5);
+    	$posts = post::where('status',0)->orderBy('created_at','DESC')->paginate(5);
     	return view('user.blog',compact('posts'));
     }
     public function tag(tag $tag)
