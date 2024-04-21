@@ -124,4 +124,5 @@ class PostController extends Controller
         // Trả về view 'show' với dữ liệu của bài post
         return view('backend.post.show', compact('post'));
     }
+    
 }

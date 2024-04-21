@@ -1,8 +1,5 @@
 @extends('backend.layouts.app')
 
-@section('headSection')
-<link rel="stylesheet" href="{{ asset('admin/plugins/datatables/dataTables.bootstrap.css') }}">
-@endsection
 @section('content')
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -69,9 +66,7 @@
                   </div>
       </div>
       <!-- /.box-body -->
-      <div class="box-footer">
-        Footer
-      </div>
+   
       <!-- /.box-footer-->
     </div>
     <!-- /.box -->
@@ -82,12 +77,5 @@
 <!-- /.content-wrapper -->
 @endsection
 
-@section('footerSection')
-<script src="{{ asset('admin/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('admin/plugins/datatables/dataTables.bootstrap.min.js') }}"></script>
-<script>
-  $(function () {
-    $("#example1").DataTable();
-  });
-</script>
+@section('script')
 @endsection

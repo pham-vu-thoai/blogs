@@ -48,7 +48,9 @@
   <script src="{{url('/public/backend/assets/vendor/simple-datatables/simple-datatables.js')}}"></script>
   <script src="{{url('/public/backend/assets/vendor/tinymce/tinymce.min.js')}}"></script>
   <script src="{{url('/public/backend/assets/vendor/php-email-form/validate.js')}}"></script>
-
+  <script src="https://cdn.ckeditor.com/ckeditor5/41.3.0/classic/ckeditor.js"></script>
+  @yield('scripts')
+  @yield('css')
   <!-- Template Main JS File -->
   <script src="{{url('/public/backend/assets/js/main.js')}}"></script>
   <script src="https://cdn.ckeditor.com/ckeditor5/41.3.0/classic/ckeditor.js"></script>

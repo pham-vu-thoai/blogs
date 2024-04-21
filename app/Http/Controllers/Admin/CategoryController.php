@@ -16,19 +16,19 @@ class CategoryController extends Controller
     public function __construct()
     {
         $this->middleware('auth:admin');
-        $this->middleware('can:posts.category');
+        // $this->middleware('can:posts.category');
     }
 
     public function index()
     {
         $categories = category::all();
-        return view('admin.category.show',compact('categories'));
+        return view('backend.category.show',compact('categories'));
     }
 
    
     public function create()
     {
-        return view('admin.category.category');
+        return view('backend.category.category');
     }
 
     
@@ -56,7 +56,7 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $category = category::where('id',$id)->first();
-        return view('admin.category.edit',compact('category'));
+        return view('backend.category.edit',compact('category'));
     }
 
 

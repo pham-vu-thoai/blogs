@@ -2,16 +2,16 @@
 <html lang="en">
 
 <head>
-    @include('user/layouts/head')
+    @include('user.layouts.head')
 </head>
 
 <body>
 
-   @include('user/layouts/header')
+   @include('user.layouts.header')
         @section('main-content')
             @show
 
-  @include('user/layouts/footer')
+  @include('user.layouts.footer')
 
 </body>
 
